@@ -21,13 +21,7 @@ class Order(
         }
     }
 
-    override fun calculateTotal(): Int {
-        var sum = 0
-        for (product in _products) {
-            sum += product.price
-        }
-        return sum
-    }
+    override fun calculateTotal() = _products.sumOf { it.price }
 
     fun pay() {
         if (_products.isNotEmpty()) {
