@@ -27,7 +27,7 @@ class Order(
         if (_products.isNotEmpty()) {
             status = OrderStatus.Paid
         } else {
-            throw IllegalStateException()
+            throw IllegalStateException("Can`t pay empty order")
         }
     }
 
